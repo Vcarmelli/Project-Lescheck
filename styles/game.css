@@ -1,0 +1,279 @@
+:root {
+    --dark-color: #9A3B3B;
+    --secondary-dark-color:#83541E;
+    --light-color:#FFE096;
+    --white: white;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif, 'Poppins', sans-serif, 'Raleway', sans-serif;
+    background-image: url("https://r4.wallpaperflare.com/wallpaper/760/955/638/artwork-landscape-sky-mountains-wallpaper-78664db880d01c78404c214e28e2847a.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    animation: transitionIn 1.5s;
+}
+
+@keyframes transitionIn {
+    from {
+      opacity: 0;
+      transform: rotateX(45deg) translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: rotateX(0deg) translateY(0px);
+    }
+}
+
+#checkerboard {
+    position: relative;
+    width: 520px;
+    height: 520px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(236, 186, 136, 0.2);
+    overflow: hidden;
+    border-radius: 25px;
+}
+
+#checkerboard::before {
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 140%;
+    background: linear-gradient(#9A3B3B, #00659E);
+    animation: animate 7s linear infinite;
+}
+
+#checkerboard::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border-radius: 16px;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#checkerboard canvas {
+    z-index: 10;
+}
+
+#p1-score, #p2-score {
+    display: flex;
+    flex-wrap: wrap;
+    position: fixed;
+    box-sizing: border-box;
+    background-image: url('../images/button3.svg'); 
+    background-size: cover;
+    height: 140px;
+    width: 350px;
+    top: 50%;
+    padding: 0px 55px;
+    transform: translateY(-50%);
+}
+
+#p1-score {
+    left: 20px;     
+}
+
+#p2-score {  
+    right: 5%;
+}
+
+#p1-score h3, #p2-score h3 {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding-top: 5%;
+    color: #00659e;
+}
+
+#p2-score h3 {
+    color: #712a2a;
+}
+
+.capturedPiece {
+    display: flex;
+    box-sizing: border-box;
+    margin: 0px 5px 0px 5px; 
+    height: 30px;
+    width: 30px;
+}
+
+#clock {
+    display: flex;
+    order: 1;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 30px;
+    width: 95px;
+    background: var(--light-color);
+    background: linear-gradient(0deg, rgb(217, 165, 44) 19%, rgb(255, 234, 176) 75%);
+    border-radius: 25px;
+    box-shadow: rgba(236, 186, 136, 0.2) 0 -25px 18px -14px inset,rgba(187, 149, 44, 0.15) 0 1px 2px,rgba(187, 132, 44, 0.15) 0 2px 4prgba(187, 154, 44, 0.15)5 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+    color: rgb(128, 90, 0);
+    padding: 7px 20px;
+    text-align: center;
+    border: 0;
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    margin: 10px;
+    order: -1;
+}
+
+.button {
+    display: block;
+    width: 150px;
+    height: 20px;
+    margin: 10px;
+    padding: 15px 20px;
+    background-color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+.button:hover {
+    transform: scale(1.1); 
+}
+
+#confirmation-popup {
+    background-color: transparent;
+    display: none;
+    position: fixed;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url('../images/button.svg');
+    z-index: 999;
+    background-size: cover;
+    height: 188px;
+    width: 300px;
+    text-align: center;
+    padding: 0px 30px;
+}
+
+#yesButton, #noButton {
+    background-color: transparent;
+    border: none; 
+    cursor: pointer;
+    margin-top: 55px;
+    margin-right: 18px;
+}
+
+#noButton {
+    margin-left: 25px;
+}
+
+#backButton {
+    background-image: url('../images/button1.png');
+    background-color: transparent;
+    z-index: 99;
+    background-size: cover;
+    height: 40px;
+    width: 125px;
+    text-align: center;
+    border: none;
+    color: white;
+}
+
+#yesButton:hover, 
+#noButton:hover, 
+#retryButton:hover, 
+#exitButton:hover, 
+#backButton:hover {
+    transform: scale(1.05) rotate(-1deg);
+    transition: all 0.4s;
+    color:white; 
+}
+
+.modal {
+    display: none; 
+    background-image: url('../images/button2.svg');
+    background-size: cover;
+    height: 246px;
+    width: 420px;
+    align-items: center;
+    position: fixed;
+    z-index: 999;
+}
+
+.modal-content {
+    position: relative;
+    margin: 10% auto;
+    padding: 20px;
+    width: 100%;
+}
+
+.popup-content {
+    padding: 20px;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#popupMessage {
+    margin-top: 0px;
+    font-size: xx-large;
+    background-size: cover;
+    position: fixed;
+}
+
+#popupScores {
+    margin-top: 40px;
+    font-size: 20px;
+}
+
+#retryButton {
+    position: fixed;
+    text-align: center;
+    background-color: transparent;
+    color:black;
+    align-items: center;
+    border: none;
+    margin-top: 10px;
+    margin-left: 9.5%;
+    cursor: pointer;
+    font-size: larger;
+}
+
+#exitButton {
+    background-color: transparent;
+    position: fixed;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    border: none;
+    margin-left: 26%;
+    margin-top: -9px;
+    cursor: pointer;
+    font-size: x-large;
+}
