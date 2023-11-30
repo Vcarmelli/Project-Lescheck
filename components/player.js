@@ -281,7 +281,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     yesButton.addEventListener('click', () => {
-        window.location.href = 'index.html';
+        window.location.href = './index.php';
     });
 
     noButton.addEventListener('click', () => {
@@ -303,6 +303,6 @@ function resetGame() {
 
     BOARD_DEF.scores['P1'] = 0;
     BOARD_DEF.scores['P2'] = 0;
-    window.location.href = 'multiplayer.html';
+    window.location.href = './multiplayer.php';
 
 }

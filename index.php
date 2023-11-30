@@ -39,9 +39,9 @@
                 </audio>
             </div>
             <div class="button-container">
-                <a href="./game.html"><button class="button" id="startButton">Player vs AI</button></a>
-                <a href="./multiplayer.html"><button class="button" id="multiplayerButton">Player vs Player</button></a>
-                <a href="./instruction.html"><button class="button" id="instructionsButton">Instructions</button></a>
+                <a href="./game.php"><button class="button" id="startButton">Player vs AI</button></a>
+                <a href="./multiplayer.php"><button class="button" id="multiplayerButton">Player vs Player</button></a>
+                <a href="./instruction.php"><button class="button" id="instructionsButton">Instructions</button></a>
             </div>
         </div>
         <DIV class="spinning">
