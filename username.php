@@ -11,7 +11,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <form class="main-container user-input" method="post" action="">
+    <form class="main-container user-input" method="post" action="./includes/signin.php">
         <div class="title-container enter">
             <div class="wrapper ten">
                 <h3 class="bounce">
@@ -32,7 +32,7 @@
             <span class="bar"></span>
             <label>Player Name</label>
         </div>
-        <button class="button" type="submit">Enter Game</button>
+        <button class="button" type="submit" name="submit">Enter Game</button>
     </form>
 </body>
 </html>

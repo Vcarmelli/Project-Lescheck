@@ -2,11 +2,11 @@
 
 class Entry extends Database {
     protected function setUsername($username) {
-        $stmt = $this->connect()->prepare('INSERT INTO scoreboard username VALUES ?;');
+        $stmt = $this->connect()->prepare('INSERT INTO players (username) VALUES ?;');
         
-        if(!$stmt->execute($username)) {
+        if(!$stmt->execute(array($username))) {
             $stmt = null;
-            header("location: ../index.php?error=stmtfailed");
+            header("location: ../index.php?error=setUNfailed");
             exit();
         }
         $stmt = null;
@@ -17,18 +17,18 @@ class Entry extends Database {
         
         if(!$stmt->execute($score)) {
             $stmt = null;
-            header("location: ../index.php?error=stmtfailed");
+            header("location: ../index.php?error=setScoreFailed");
             exit();
         }
         $stmt = null;
     }
     
     protected function checkUser($username) {
-        $stmt = $this->connect()->prepare('SELECT username FROM scoreboard WHERE username = ?;');
+        $stmt = $this->connect()->prepare('SELECT username FROM players WHERE username = ?;');
         
-        if(!$stmt->execute($username)) {
+        if(!$stmt->execute(array($username))) {
             $stmt = null;
-            header("location: ../index.php?error=stmtfailed");
+            header("location: ../index.php?error=checkUserFailed");
             exit();
         }
 

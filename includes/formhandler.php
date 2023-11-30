@@ -22,12 +22,15 @@ class Formhandler extends Entry {
             header("location: ../index.php?error=sameUsername");
             exit();
         }
+
+        $this->setUsername($this->username);
+        $this->setScore($this->score);
     }
 
 
     private function emptyInput() {
         $result = false;
-        if(empty($this->username) || empty($this->score)) {
+        if(empty($this->username) || $this->score < 0) {
             $result = false;
         }
         else {
