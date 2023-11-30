@@ -241,6 +241,7 @@ body {
 }
 
 #popupMessage {
+    font-family: 'Bowlby One SC', sans-serif;
     margin-top: 0px;
     font-size: xx-large;
     background-size: cover;
@@ -277,3 +278,4 @@ body {
     cursor: pointer;
     font-size: x-large;
 }
+
