@@ -22,6 +22,7 @@ class Ingame extends Database {
         session_start();
         $_SESSION["playerid"] = $player[0]["player_id"];
         $_SESSION["playername"] = $player[0]["username"];
+        $_SESSION["playerscore"] = $player[0]["score"];
         $stmt = null;
     }
 

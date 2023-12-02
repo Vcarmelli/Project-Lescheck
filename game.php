@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Poppins:wght@200&family=Raleway:wght@100;300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/game.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Checkers</title>
 </head>
 <body>  
@@ -42,7 +43,7 @@
             <div class="popup-content">
                 <h1 class="results" id="popupMessage"></h1>
                 <p id="popupScores"></p>
-                <button id="retryButton">Retry</button>
+                <button id="retryButton" onclick="submitScore('<?php echo $_SESSION['playername'];?>', '<?php echo $_SESSION['playerscore'];?>')">SAVE? GOTOLEADERBOARD? Not Retry</button>
             </div>
         </div>
     </div>
@@ -52,6 +53,7 @@
     <script type="text/javascript" src="./components/tile.js"></script>
     <script type="text/javascript" src="./components/ai.js"></script>
     <script type="text/javascript" src="./components/clock.js"></script>
+    <script type="text/javascript" src="./components/ajax.js"></script>
     <script type="text/javascript" src="./main.js"></script>
 </body>
 </html>

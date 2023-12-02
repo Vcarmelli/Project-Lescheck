@@ -280,6 +280,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const confirmationPopup = document.getElementById('confirmation-popup');
     const yesButton = document.getElementById('yesButton');
     const noButton = document.getElementById('noButton');
+    const retryButton = document.getElementById('retryButton');
     const exitButton = document.getElementById('exitButton');
     const myModal = document.getElementById('myModal');
 
@@ -294,22 +295,23 @@ document.addEventListener('DOMContentLoaded', function() {
     noButton.addEventListener('click', () => {
         confirmationPopup.style.display = 'none';
     });
-    const retryButton = document.getElementById('retryButton');
-    retryButton.addEventListener('click', function() {
-        resetGame();
-    });
+    
+    // retryButton.addEventListener('click', () => {
+    //     resetGame();
+    // });
+
     exitButton.addEventListener('click', () => {
         myModal.style.display = 'none';
     });
 
 });
 
-function resetGame() {
-    $('#p1-score').html('');
-    $('#p2-score').html('');
+// function resetGame() {
+//     $('#p1-score').html('');
+//     $('#p2-score').html('');
 
-    BOARD_DEF.scores['P1'] = 0;
-    BOARD_DEF.scores['P2'] = 0;
-    window.location.href = './game.php';
+//     BOARD_DEF.scores['P1'] = 0;
+//     BOARD_DEF.scores['P2'] = 0;
+//     window.location.href = './game.php';
 
-}
+// }
