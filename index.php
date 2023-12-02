@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,6 +47,21 @@
                 <a href="./multiplayer.php"><button class="button" id="multiplayerButton">Player vs Player</button></a>
                 <a href="./instruction.php"><button class="button" id="instructionsButton">Instructions</button></a>
             </div>
+            <div class="greet-user">
+                <?php 
+                    if(isset($_SESSION["playername"])) {
+                ?>
+                        <h1>Welcome, <?php echo $_SESSION["playername"]; ?></h1>
+                <?php
+                    } 
+                    else {
+                ?>
+                        <h1>WALANG PLAYER</h1>
+                <?php
+                    }
+                ?>
+            </div>
+            
         </div>
         <DIV class="spinning">
             <DIV class="object3d chess-defaults">
