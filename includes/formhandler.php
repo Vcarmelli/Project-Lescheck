@@ -24,7 +24,7 @@ class Formhandler extends Entry {
         }
 
         $this->setUsername($this->username);
-        $this->setScore($this->score);
+        $this->setScore($this->username, $this->score);
     }
 
 

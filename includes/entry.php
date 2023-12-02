@@ -2,7 +2,7 @@
 
 class Entry extends Database {
     protected function setUsername($username) {
-        $stmt = $this->connect()->prepare('INSERT INTO players (username) VALUES ?;');
+        $stmt = $this->connect()->prepare('INSERT INTO players (username) VALUES (?);');
         
         if(!$stmt->execute(array($username))) {
             $stmt = null;
@@ -12,10 +12,10 @@ class Entry extends Database {
         $stmt = null;
     }
 
-    protected function setScore($score) {
-        $stmt = $this->connect()->prepare('INSERT INTO players score VALUES ?;');
+    protected function setScore($username, $score) {
+        $stmt = $this->connect()->prepare('UPDATE players SET score = ? WHERE username = ?;');
         
-        if(!$stmt->execute($score)) {
+        if(!$stmt->execute(array($score, $username))) {
             $stmt = null;
             header("location: ../index.php?error=setScoreFailed");
             exit();
