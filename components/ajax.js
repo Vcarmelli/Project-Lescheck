@@ -1,8 +1,7 @@
-function submitScore(username, score) {
+function submitScore(score) {
     $(document).ready(function() {
         var data = {
             action: "save",
-            username, username,
             score: score
         }
 

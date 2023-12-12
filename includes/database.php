@@ -1,6 +1,7 @@
 <?php
 
 class Database {
+    
     public function connect() {
         try {
             $dbusername = "root";

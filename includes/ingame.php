@@ -1,6 +1,7 @@
 <?php
 
 class Ingame extends Database {
+    public $playerUN;
 
     public function getPlayer($username) {
         $stmt = $this->connect()->prepare('SELECT * FROM players WHERE username = ?;');
@@ -26,4 +27,12 @@ class Ingame extends Database {
         $stmt = null;
     }
 
+    public function getPlayerName() {
+        session_start(); 
+        if (isset($_SESSION["playername"])) {
+            return $_SESSION["playername"];
+        } else {
+            return null;
+        };
+    }
 }

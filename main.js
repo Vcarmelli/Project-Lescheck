@@ -296,9 +296,10 @@ document.addEventListener('DOMContentLoaded', function() {
         confirmationPopup.style.display = 'none';
     });
     
-    // retryButton.addEventListener('click', () => {
-    //     resetGame();
-    // });
+    retryButton.addEventListener('click', () => {
+        submitScore(BOARD_DEF.scores['P2']);
+        //resetGame();
+    });
 
     exitButton.addEventListener('click', () => {
         myModal.style.display = 'none';
