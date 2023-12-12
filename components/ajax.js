@@ -10,7 +10,9 @@ function submitScore(score) {
             type: 'POST',
             data: data,
             success: function(response) {
-                console.log(response);
+                if (response == 1) {
+                    window.location.href = 'leaderboard.php'; 
+                } 
             }
         });
 

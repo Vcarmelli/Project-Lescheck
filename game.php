@@ -43,7 +43,7 @@
             <div class="popup-content">
                 <h1 class="results" id="popupMessage"></h1>
                 <p id="popupScores"></p>
-                <button id="retryButton">SAVE? GOTOLEADERBOARD? Not Retry</button>
+                <button id="retryButton">SAVE</button>
             </div>
         </div>
     </div>

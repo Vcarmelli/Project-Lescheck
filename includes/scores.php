@@ -27,6 +27,7 @@ function save() {
             exit();
         }
         $stmt = null;
+        echo 1;
     } 
     catch (Exception $e) {
         die("Query Failed in scores.php: " . $e->getMessage());
