@@ -46,7 +46,7 @@
             </div>
         </div>
         <div class="button-container">
-            <a href="./index.php"><button class="button">Back to Menu</button></a>
+            <a href="./start.php"><button class="button">Back to Menu</button></a>
         </div>
     </div>
     
