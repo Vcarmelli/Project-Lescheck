@@ -23,7 +23,7 @@
         <div class="main-container">
             <div class="title-container">
                 <div class="wrapper ten">
-                    <div>
+                    <div class="title">
                         <h3 class="bounce">
                             <span>L</span>
                             <span>E</span>
@@ -45,6 +45,16 @@
         </div>
         <div class="start-btn">
             <a href="./username.php"><img src="./images/PNG/start.png"></a>
+        </div>
+        <div class="list-popup">
+            <a href="#" onclick="showList()"><img src="./images/PNG/list.png"></a>
+            <div id="group" class="list-grp">
+            <p><b>Sheeshables</b></p>
+            <p>Jamie Jasmine Sano</p>
+            <p>Diane Mae Corcino</p>
+            <p>Vashti Karmelli Camu</p>
+            <p>Paul Adrian Torres</p>
+            </div>
         </div>
         <DIV class="spinning">
             <DIV class="object3d chess-defaults">
@@ -176,5 +186,12 @@
             <div></div>
         </div>
     </div>
+
+    <script>
+        function showList() {
+            var groupList = document.getElementById('group');
+            groupList.classList.toggle('show');
+        }
+    </script>
 </body>
 </html>
