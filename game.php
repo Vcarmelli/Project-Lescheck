@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./styles/game.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <title>Checkers</title>
+    <title>LesCheck | Game</title>
 </head>
 <body>  
     <div id="checkerboard"></div>
@@ -36,12 +36,11 @@
 
     <div id="myModal" class="modal">
         <div class="modal-content">
-            <div class="popup-content">
-                <h1 class="results" id="popupMessage"></h1>
-                <p id="popupScores"></p>
-                <button id="retryButton"></button>
-                <button id="exitButton"></button>
-            </div>
+            <h1 class="results" id="popupMessage"></h1>
+            <p id="popupScores"></p>
+            <button id="retryButton"></button>
+            <button id="saveButton"></button>
+            <button id="homeButton"></button>
         </div>
     </div>
 

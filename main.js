@@ -20,7 +20,6 @@ let removedPlayer = 0;
 let score = 0;
 
 function init(){
-    $('#myModal').css('display', 'block');
     let colorblack = false;
     let indexOfSqr = 0;
     for(let r=0; r<8; r++){
@@ -281,7 +280,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const yesButton = document.getElementById('yesButton');
     const noButton = document.getElementById('noButton');
     const retryButton = document.getElementById('retryButton');
-    const exitButton = document.getElementById('exitButton');
+    const homeButton = document.getElementById('homeButton');
     const myModal = document.getElementById('myModal');
 
     backButton.addEventListener('click', () => {
@@ -297,22 +296,25 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     retryButton.addEventListener('click', () => {
-        submitScore(BOARD_DEF.scores['P2']);
-        //resetGame();
+        resetGame();
     });
 
-    exitButton.addEventListener('click', () => {
-        myModal.style.display = 'none';
+    saveButton.addEventListener('click', () => {
+        submitScore(BOARD_DEF.scores['P2']);
+    });
+
+    homeButton.addEventListener('click', () => {
+        window.location.href = './index.php';
     });
 
 });
 
-// function resetGame() {
-//     $('#p1-score').html('');
-//     $('#p2-score').html('');
+function resetGame() {
+    $('#p1-score').html('');
+    $('#p2-score').html('');
 
-//     BOARD_DEF.scores['P1'] = 0;
-//     BOARD_DEF.scores['P2'] = 0;
-//     window.location.href = './game.php';
+    BOARD_DEF.scores['P1'] = 0;
+    BOARD_DEF.scores['P2'] = 0;
+    window.location.href = './game.php';
 
-// }
+}
