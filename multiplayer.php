@@ -36,12 +36,11 @@
 
     <div id="myModal" class="modal">
         <div class="modal-content">
-            <button id="exitButton">X</button>
-            <div class="popup-content">
-                <h1 class="results" id="popupMessage"></h1>
-                <p id="popupScores"></p>
-                <button id="retryButton">Retry</button>
-            </div>
+            <h1 class="results" id="popupMessage"></h1>
+            <p id="popupScores"></p>
+            <button id="retryButton"></button>
+            <button id="saveButton"></button>
+            <button id="homeButton"></button>
         </div>
     </div>
 

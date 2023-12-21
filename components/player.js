@@ -273,8 +273,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const confirmationPopup = document.getElementById('confirmation-popup');
     const yesButton = document.getElementById('yesButton');
     const noButton = document.getElementById('noButton');
-    const exitButton = document.getElementById('exitButton');
-    const myModal = document.getElementById('myModal');
+    const retryButton = document.getElementById('retryButton');
+    const homeButton = document.getElementById('homeButton');
+    const saveButton = document.getElementById('saveButton');
 
     backButton.addEventListener('click', () => {
         confirmationPopup.style.display = 'block';
@@ -287,12 +288,17 @@ document.addEventListener('DOMContentLoaded', function() {
     noButton.addEventListener('click', () => {
         confirmationPopup.style.display = 'none';
     });
-    const retryButton = document.getElementById('retryButton');
-    retryButton.addEventListener('click', function() {
+
+    retryButton.addEventListener('click', () => {
         resetGame();
     });
-    exitButton.addEventListener('click', () => {
-        myModal.style.display = 'none';
+
+    saveButton.addEventListener('click', () => {
+        submitScore(BOARD_DEF.scores['P2']);
+    });
+
+    homeButton.addEventListener('click', () => {
+        window.location.href = './index.php';
     });
 
 });

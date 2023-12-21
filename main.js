@@ -281,7 +281,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const noButton = document.getElementById('noButton');
     const retryButton = document.getElementById('retryButton');
     const homeButton = document.getElementById('homeButton');
-    const myModal = document.getElementById('myModal');
+    const saveButton = document.getElementById('saveButton');
 
     backButton.addEventListener('click', () => {
         confirmationPopup.style.display = 'block';
