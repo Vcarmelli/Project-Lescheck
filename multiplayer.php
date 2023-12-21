@@ -29,12 +29,9 @@
     </div>
 
     <div id="confirmation-popup">
-        <p> 
-            <br>Are you sure you want to go back to
-            <br>the menu?
-        </p>
-        <button id="yesButton">Yes</button>
-        <button id="noButton">No</button>
+        <p>Are you sure you want to go back to the menu?</p>
+        <button id="yesButton"></button>
+        <button id="noButton"></button>
     </div>
 
     <div id="myModal" class="modal">

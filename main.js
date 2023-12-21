@@ -20,7 +20,7 @@ let removedPlayer = 0;
 let score = 0;
 
 function init(){
-
+    $('#myModal').css('display', 'block');
     let colorblack = false;
     let indexOfSqr = 0;
     for(let r=0; r<8; r++){

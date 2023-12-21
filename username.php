@@ -32,6 +32,23 @@
             <span class="bar"></span>
             <label>Player Name</label>
         </div>
+        <div class="circles">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
         <button class="button" type="submit" name="submit" onClick="window.location.href='./index.php';">Enter Game</button>
     </form>
 </body>

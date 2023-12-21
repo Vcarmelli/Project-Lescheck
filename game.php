@@ -29,21 +29,18 @@
     </div>
 
     <div id="confirmation-popup">
-        <p> 
-            <br>Are you sure you want to go back to
-            <br>the menu?
-        </p>
-        <button id="yesButton">Yes</button>
-        <button id="noButton">No</button>
+        <p>Are you sure you want to go back to the menu?</p>
+        <button id="yesButton"></button>
+        <button id="noButton"></button>
     </div>
 
     <div id="myModal" class="modal">
         <div class="modal-content">
-            <button id="exitButton">X</button>
             <div class="popup-content">
                 <h1 class="results" id="popupMessage"></h1>
                 <p id="popupScores"></p>
-                <button id="retryButton">SAVE</button>
+                <button id="retryButton"></button>
+                <button id="exitButton"></button>
             </div>
         </div>
     </div>
