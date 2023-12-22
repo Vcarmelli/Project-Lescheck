@@ -1,5 +1,7 @@
 <?php
     session_start();
+    session_unset();
+    session_destroy();
 ?>
 
 <!DOCTYPE html>
@@ -51,8 +53,8 @@
             <div id="group" class="list-grp">
             <p><b>Sheeshables</b></p>
             <p>Jamie Jasmine Sano</p>
-            <p>Diane Mae Corcino</p>
             <p>Vashti Karmelli Camu</p>
+            <p>Diane Mae Corcino</p>
             <p>Paul Adrian Torres</p>
             </div>
         </div>

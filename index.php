@@ -43,25 +43,29 @@
                 </audio>
             </div>
             <div class="button-container">
-                <a href="./game.php"><button class="button" id="startButton">Player vs AI</button></a>
-                <a href="./multiplayer.php"><button class="button" id="multiplayerButton">Player vs Player</button></a>
-                <a href="./instruction.php"><button class="button" id="instructionsButton">Instructions/Exit Player</button></a>
+                <div>
+                    <a href="./game.php"><button class="button" id="startButton">Player vs AI</button></a>
+                    <a href="./multiplayer.php"><button class="button" id="multiplayerButton">Player vs Player</button></a>
+                </div>
+                <div>
+                    <a href="./instruction.php"><button class="button ins-btn" id="instructionsButton"></button></a>
+                    <a href="./start.php"><button class="button ext-btn" id="exitButton"></button></a>
+                </div>
             </div>
-            <div class="greet-user">
-                <?php 
-                    if(isset($_SESSION["playername"])) {
-                ?>
-                        <h1>Welcome, <?php echo $_SESSION["playername"]; ?></h1>
-                <?php
-                    } 
-                    else {
-                ?>
-                        <h1>WALANG PLAYER</h1>
-                <?php
-                    }
-                ?>
-            </div>
-            
+        </div>
+        <div class="greet-user">
+            <?php 
+                if(isset($_SESSION["playername"])) {
+            ?>
+                    <h3>Welcome, <?php echo $_SESSION["playername"]; ?></h3>
+            <?php
+                } 
+                else {
+            ?>
+                    <h3>NO PLAYER</h3>
+            <?php
+                }
+            ?>
         </div>
         <DIV class="spinning">
             <DIV class="object3d chess-defaults">

@@ -13,8 +13,8 @@ body {
     background-position: center;
     background-repeat: no-repeat; 
     margin: 0;
-    overflow-x: hidden;
     animation: transitionIn 2s;
+    overflow: hidden;
     height: fit-content;
 }
 
@@ -38,7 +38,6 @@ body {
     flex-direction: row; 
     align-items: center;
     justify-content: center;
-    cursor: cell;
 }
 
 .main-container {
@@ -77,32 +76,30 @@ p {
 
 .button-container {
     display: flex;
-    flex-direction: column; 
     align-items: center;
-    justify-content: center;
-    gap: 10px; 
-    margin: 0;
+    justify-content: center; 
+    margin: 0 10%;
 }
 
 .button {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  height: 75px;
-  width: 400px;
-  background: rgb(255,224,150);
-  background: linear-gradient(0deg, rgba(255,224,150,1) 19%, rgba(255,240,200,1) 75%);
+  font-size: 25px;
+  height: 3em;
+  width: 300px;
+  margin: 15px;
+  background-color: transparent;
+  background-image: url('../images/PNG/button-border.png');
+  background-size: cover;
+  background-position: center;
+  border: none;
   border-radius: 25px;
-  box-shadow: rgba(236, 186, 136, 0.2) 0 -25px 18px -14px inset,rgba(187, 149, 44, 0.15) 0 1px 2px,rgba(187, 132, 44, 0.15) 0 2px 4prgba(187, 154, 44, 0.15)5 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
-  color: rgb(128, 90, 0);
+  color: #fab752;
+  box-shadow: 0 0 20px rgba(242, 236, 190, 0.7);
   cursor: pointer;
   display: inline-block;
-  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
-  padding: 7px 20px;
   text-align: center;
-  text-decoration: none;
   transition: all 250ms;
-  border: 0;
-  font-size: 25px;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
@@ -111,6 +108,29 @@ p {
 .button:hover {
   box-shadow: rgba(187, 158, 44, 0.35) 0 -25px 18px -14px inset,rgba(187, 134, 44, 0.25) 0 1px 2px,rgba(187, 151, 44, 0.25) 0 2px 4px,rgba(187, 127, 44, 0.25) 0 4px 8px,rgba(187, 142, 44, 0.25) 0 8px 16px,rgba(187, 130, 44, 0.25) 0 16px 32px;
   transform: scale(1.05) rotate(-1deg);
+  filter:contrast(1.2);
+}
+
+.ins-btn, .ext-btn {
+  background-image: url('../images/PNG/instructions.png');
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+}
+
+.ext-btn {
+  background-image: url('../images/PNG/exit.png');
+}
+
+.greet-user {
+  position:fixed;
+  display: flex;
+  align-content: flex-start;
+  height: 100%;
+  margin-left: 40%;
+  padding-right: 3%;
+  font-size: 40px;
+  color: var(--light-color);
 }
 
 .bounce {
@@ -119,9 +139,9 @@ p {
   justify-content: center;
   margin: 0;
 }
+
 .bounce span {
   display: inline-flex;
-  color: #c7f4ff;
   font-family: 'Bowlby One SC', sans-serif;
     font-size: 100px;
     text-align: center;
@@ -505,12 +525,12 @@ p {
 }
 
 .chess-defaults{
-  --block-size:70px;
+  --block-size:90px;
   --block-set-size:calc(var(--block-size) * 2);
   --block-size-ag:50;
   --outline-size:6px;
   --outline-offset:8px;
-  --border-size:30px;
+  --border-size:35px;
   --border-size-init:20px;
   --max-area:calc(var(--block-size) * 8);
   --outline-template:calc(100% + var(--outline-offset) * 2);
@@ -569,7 +589,7 @@ p {
 }
 
 .PAWN{
-  --piece-basesize:50px;
+  --piece-basesize:60px;
   --piece-upsize:40px;
   --piece-thickness:20px;
   --piece-height:30px;
@@ -597,102 +617,3 @@ p {
   border-radius: 50%; 
 }
 
-.user-input {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-self: center;
-  margin: auto;
-  margin-top: 5em;
-}
-
-.group { 
-  position: relative; 
-  margin: 30px 0 70px 0;
-}
-
-input {
-  font-size:18px;
-  padding:10px 10px 10px 5px;
-  display:block;
-  width:285px;
-  border:none;
-  border-bottom:1px solid var(--dark-color);
-}
-
-input:focus { 
-  outline:none; 
-}
-
-label {
-  color:#999; 
-  font-size:18px;
-  font-weight:normal;
-  position:absolute;
-  pointer-events:none;
-  left:5px;
-  top:10px;
-  transition:0.2s ease all; 
-  -webkit-transition:0.2s ease all;
-}
-
-input:focus ~ label, input:valid ~ label 		{
-  top:-20px;
-  font-size:14px;
-  color:var(--dark-color);
-}
-
-.bar 	{ 
-  position:relative; 
-  display:block; 
-  width:300px; 
-}
-
-.bar:before, .bar:after {
-  content:'';
-  height:2px; 
-  width:0;
-  bottom:1px; 
-  position:absolute;
-  background:var(--dark-color); 
-  transition:0.2s ease all; 
-  -webkit-transition:0.2s ease all;
-}
-
-.bar:before {
-  left:50%;
-}
-
-.bar:after {
-  right:50%; 
-}
-
-input:focus ~ .bar:before, input:focus ~ .bar:after {
-  width:50%;
-}
-
-.highlight {
-  position:absolute;
-  height:60%; 
-  width:100px; 
-  top:25%; 
-  left:0;
-  pointer-events:none;
-  opacity:0.5;
-}
-
-input:focus ~ .highlight {
-  -webkit-animation:inputHighlighter 0.3s ease;
-  animation:inputHighlighter 0.3s ease;
-}
-
-
-@keyframes inputHighlighter {
-	from { 
-    background:var(--dark-color); 
-  }
-  to { 
-    width:0; 
-    background:transparent; 
-  }
-}

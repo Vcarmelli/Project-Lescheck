@@ -1,9 +1,3 @@
-<?php
-    session_start();
-    session_unset();
-    session_destroy();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,7 +40,7 @@
             </div>
         </div>
         <div class="button-container">
-            <a href="./start.php"><button class="button">Back to Menu</button></a>
+            <a href="./index.php"><button class="button">Back to Menu</button></a>
         </div>
     </div>
     
