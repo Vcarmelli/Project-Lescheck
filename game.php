@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,11 +25,11 @@
     </div>
 
     <div id="p1-score">
-        <h3>Player One (Computer)</h3>
+        <h3>Computer</h3>
     </div>
 
     <div id="p2-score">
-        <h3>Player Two (You)</h3>
+        <h3><?php echo $_SESSION["playername"]; ?></h3>
     </div>
 
     <div id="confirmation-popup">

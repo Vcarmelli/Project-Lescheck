@@ -1,3 +1,5 @@
+@import "./username.css";
+
 body {
   font-family: 'Londrina Solid', sans-serif;
   font-weight: 400;
@@ -29,14 +31,14 @@ body {
 }
 
 .box {
-  width: 60%;
-  height: 75%;
+  width: 55%;
+  height: 60%;
   border-radius: 25px;
   background: radial-gradient(circle, rgba(255,229,197,1) 0%, rgba(255,200,132,1) 44%, rgba(223,152,73,1) 100%);
   border: 5px solid #83541e;
   padding: 20px;
   overflow: auto; 
-  margin: 0;
+  margin-bottom: 5%;
   box-shadow: inset 0 6px 2px #cd893b;
 }
 
@@ -110,29 +112,6 @@ p {
   font-size: 1em;
   line-height: 2rem;
   text-align: justify;
-}
-
-table {
-  font-family: 'Poppins', sans-serif;
-  border-collapse: collapse;
-  width: 80%;
-  margin: 40px auto;
-}
-
-th {
-  font-family: 'Bowlby One SC', sans-serif;
-  font-size: 1.5em;
-  color: #9A3B3B;
-}
-
-th, td {
-  padding: 8px;
-  text-align: center;
-  border-bottom: 1px solid #9A3B3B;
-}
-
-tr:hover {
-  background-color: #F2ECBE;
 }
 
 .button-container {

@@ -33,7 +33,7 @@
                 <span class="bar"></span>
                 <label>Player Name</label>
             </div>
-            <button class="button" type="submit" name="submit" onClick="window.location.href='./index.php';">Enter Game</button>   
+            <button class="button" type="submit" name="submit">Enter Game</button>   
         </div>
         <DIV class="spinning">
             <DIV class="object3d chess-defaults">

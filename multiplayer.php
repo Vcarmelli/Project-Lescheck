@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +25,7 @@
     </div>
 
     <div id="p1-score">
-        <h3>Player One</h3>
+        <h3><?php echo $_SESSION["playername"]; ?></h3>
     </div>
 
     <div id="p2-score">

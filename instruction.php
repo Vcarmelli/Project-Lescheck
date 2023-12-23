@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./styles/instruction.css">
 </head>
 <body>
-    <div class="box">
+    <div class="main-container box">
         <div class="title-container">
             <h1 class="instr-title">LesCheck</h1>
             <h4 class="sub-title">Instruction</h4>
@@ -19,7 +19,7 @@
             <div class="column">
                 <h2>How to play</h2>
                 <p>1. Choose to play against the computer or with a friend
-                    <br>2. Press on a piece to select it and then choose a move or jump, press it again to put it down
+                    <br> 2. Press on a piece to select it and then choose a move or jump, press it again to put it down
                     <br> 3. Always keep your pieces doubled up diagonally to block your opponent's jumps
                     <br> 4. Quickly get your pieces promoted to kings so they can move forward and backward across the board
                     <br> 5. Try to lure your opponent into a double or triple jump trap
@@ -43,6 +43,134 @@
             <a href="./index.php"><button class="button">Back to Menu</button></a>
         </div>
     </div>
-    
+    <DIV class="spinning">
+        <DIV class="object3d chess-defaults">
+            <!-- The Stage -->
+            <div class="reusable-rect main-stage">
+                <div class="sides side1"></div>
+                <div class="sides side2"></div>
+            
+                <!-- Elements over Stage -->
+                <div class="main-elements">
+                    <DIV class="board">
+                        <!-- RED -->
+                        <div class="piece PAWN" style="--v:5;--h:1;">
+                            <div class="reusable-rect piece-base"> <div class="sides side1"></div> <div class="sides side2"></div> </div>
+                        </div>
+                    
+                        <div class="piece PAWN" style="--v:5;--h:3;">
+                            <div class="reusable-rect piece-base"> <div class="sides side1"></div> <div class="sides side2"></div> </div>
+                        </div>
+                    
+                        <div class="piece PAWN" style="--v:5;--h:5;">
+                            <div class="reusable-rect piece-base"> <div class="sides side1"></div> <div class="sides side2"></div> </div>
+                        </div>
+                        
+                        <div class="piece PAWN" style="--v:5;--h:7;">
+                            <div class="reusable-rect piece-base"> <div class="sides side1"></div> <div class="sides side2"></div> </div>
+                        </div>
+                    
+                        <div class="piece PAWN" style="--v:6;--h:0;">
+                            <div class="reusable-rect piece-base"> <div class="sides side1"></div> <div class="sides side2"></div> </div>
+                        </div>
+                    
+                        <div class="piece PAWN" style="--v:6;--h:2;">
+                            <div class="reusable-rect piece-base"> <div class="sides side1"></div> <div class="sides side2"></div> </div>
+                        </div>
+                    
+                        <div class="piece PAWN" style="--v:6;--h:4;">
+                            <div class="reusable-rect piece-base"> <div class="sides side1"></div> <div class="sides side2"></div> </div>
+                        </div>
+                        
+                        <div class="piece PAWN" style="--v:6;--h:6;">
+                            <div class="reusable-rect piece-base"> <div class="sides side1"></div> <div class="sides side2"></div> </div>
+                        </div>
+                        
+                        <div class="piece PAWN" style="--v:7;--h:1;">
+                            <div class="reusable-rect piece-base"> <div class="sides side1"></div> <div class="sides side2"></div> </div>
+                        </div>
+                    
+                        <div class="piece PAWN" style="--v:7;--h:3;">
+                            <div class="reusable-rect piece-base"> <div class="sides side1"></div> <div class="sides side2"></div> </div>
+                        </div>
+                    
+                        <div class="piece PAWN" style="--v:7;--h:5;">
+                            <div class="reusable-rect piece-base"> <div class="sides side1"></div> <div class="sides side2"></div> </div>
+                        </div>
+                        
+                        <div class="piece PAWN" style="--v:7;--h:7;">
+                            <div class="reusable-rect piece-base"> <div class="sides side1"></div> <div class="sides side2"></div> </div>
+                        </div> 
+                        
+                        <!-- BLUE -->
+                        <div class="piece BLUE PAWN" style="--v:0;--h:0;">
+                            <div class="reusable-rect piece-base"> <div class="sides side1"></div> <div class="sides side2"></div> </div>
+                        </div>
+                    
+                        <div class="piece BLUE PAWN" style="--v:0;--h:2;">
+                            <div class="reusable-rect piece-base"> <div class="sides side1"></div> <div class="sides side2"></div> </div>
+                        </div>
+                    
+                        <div class="piece BLUE PAWN" style="--v:0;--h:4;">
+                            <div class="reusable-rect piece-base"> <div class="sides side1"></div> <div class="sides side2"></div> </div>
+                        </div>
+                        
+                        <div class="piece BLUE PAWN" style="--v:0;--h:6;">
+                            <div class="reusable-rect piece-base"> <div class="sides side1"></div> <div class="sides side2"></div> </div>
+                        </div>
+                    
+                        <div class="piece BLUE PAWN" style="--v:1;--h:1;">
+                            <div class="reusable-rect piece-base"> <div class="sides side1"></div> <div class="sides side2"></div> </div>
+                        </div>
+                    
+                        <div class="piece BLUE PAWN" style="--v:1;--h:3;">
+                            <div class="reusable-rect piece-base"> <div class="sides side1"></div> <div class="sides side2"></div> </div>
+                        </div>
+                    
+                        <div class="piece BLUE PAWN" style="--v:1;--h:5;">
+                            <div class="reusable-rect piece-base"> <div class="sides side1"></div> <div class="sides side2"></div> </div>
+                        </div>
+                        
+                        <div class="piece BLUE PAWN" style="--v:1;--h:7;">
+                            <div class="reusable-rect piece-base"> <div class="sides side1"></div> <div class="sides side2"></div> </div>
+                        </div>
+                        
+                        <div class="piece BLUE PAWN" style="--v:2;--h:0;">
+                            <div class="reusable-rect piece-base"> <div class="sides side1"></div> <div class="sides side2"></div> </div>
+                        </div>
+                    
+                        <div class="piece BLUE PAWN" style="--v:2;--h:2;">
+                            <div class="reusable-rect piece-base"> <div class="sides side1"></div> <div class="sides side2"></div> </div>
+                        </div>
+                    
+                        <div class="piece BLUE PAWN" style="--v:2;--h:4;">
+                            <div class="reusable-rect piece-base"> <div class="sides side1"></div> <div class="sides side2"></div> </div>
+                        </div>
+                        
+                        <div class="piece BLUE PAWN" style="--v:2;--h:6;">
+                            <div class="reusable-rect piece-base"> <div class="sides side1"></div> <div class="sides side2"></div> </div>
+                        </div>           
+                    </DIV>
+                </div>
+            </div>
+        </DIV>
+    </DIV>
+    <div class="circles">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
 </body>
 </html>

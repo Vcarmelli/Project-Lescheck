@@ -8,7 +8,7 @@ if(isset($_POST["action"])) {
        save();
     }
     else {
-        echo "<script>console.log('DI NAGANA? SCORES.PHP');</script>";
+        echo "<script>console.log('ERROR IN SCORES.PHP');</script>";
     }
 }
  
