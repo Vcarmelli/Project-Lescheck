@@ -36,11 +36,6 @@
                         </h3>
                     </div>
                 </div>
-                <audio class="hidden-audio">
-                    <source src="./clicksound.mp3" type="audio/mpeg">
-                    <source src="./clicksound.ogg" type="audio/ogg">
-                    Your browser does not support HTML5 audio
-                </audio>
             </div>
             <div class="button-container">
                 <div>
@@ -49,7 +44,7 @@
                 </div>
                 <div>
                     <a href="./instruction.php"><button class="button ins-btn" id="instructionsButton"></button></a>
-                    <a href="./start.php"><button class="button ext-btn" id="exitButton"></button></a>
+                    <a href="./index.php"><button class="button ext-btn" id="exitButton"></button></a>
                 </div>
             </div>
         </div>

@@ -256,11 +256,12 @@ function loop() {
         counterAlert++;
     }
     if(counterAlert > 30){
-        let p = BOARD_DEF.move == PLAYER.P1 ? "Red" : "Blue";
         stopLoop = true;
-        let result = p + " player wins!";
+        let player = $('#p2-name').text();
+        let p = BOARD_DEF.move == PLAYER.P1 ? player : "Computer"; 
+        let result = p + " wins!";
         $('#popupMessage').text(result);
-        $('#popupScores').html("Player 1 Score: " + BOARD_DEF.scores['P1'] + "<br>Player 2 Score: " + BOARD_DEF.scores['P2']);
+        $('#popupScores').html("Computer score: " + BOARD_DEF.scores['P1'] + "<br>" + player + " score: " + BOARD_DEF.scores['P2']);
         $('#myModal').css('display', 'block');
         endTime();
     }
@@ -288,7 +289,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     yesButton.addEventListener('click', () => {
-        window.location.href = './index.php';
+        window.location.href = './home.php';
     });
 
     noButton.addEventListener('click', () => {
@@ -304,7 +305,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     homeButton.addEventListener('click', () => {
-        window.location.href = './index.php';
+        window.location.href = './home.php';
     });
 
 });

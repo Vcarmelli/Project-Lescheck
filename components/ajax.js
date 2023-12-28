@@ -11,7 +11,7 @@ function submitScore(score) {
             data: data,
             success: function(response) {
                 if (response == 1) {
-                    window.location.href = 'leaderboard.php'; 
+                    window.location.href = '../leaderboard.php'; 
                 } 
             }
         });

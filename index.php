@@ -17,11 +17,6 @@
 </head>
 <body>
     <div class="wrap">
-        <audio autoplay loop class="hidden-audio">
-            <source src="./Top Ten - Jeremy Blake.mp3" type="audio/mp3">
-            Your browser does not support HTML5 audio
-        </audio>
-
         <div class="main-container">
             <div class="title-container">
                 <div class="wrapper ten">
@@ -38,24 +33,19 @@
                         </h3>
                     </div>
                 </div>
-                <audio class="hidden-audio">
-                    <source src="./clicksound.mp3" type="audio/mpeg">
-                    <source src="./clicksound.ogg" type="audio/ogg">
-                    Your browser does not support HTML5 audio
-                </audio>
             </div>
         </div>
-        <div class="start-btn">
+        <div class="start-btn" onclick="audio.play()">
             <a href="./username.php"><img src="./images/PNG/start.png"></a>
         </div>
         <div class="list-popup">
             <a href="#" onclick="showList()"><img src="./images/PNG/list.png"></a>
             <div id="group" class="list-grp">
-            <p><b>Sheeshables</b></p>
-            <p>Jamie Jasmine Sano</p>
-            <p>Vashti Karmelli Camu</p>
-            <p>Diane Mae Corcino</p>
-            <p>Paul Adrian Torres</p>
+                <p><b>Sheeshables</b></p>
+                <p>Jamie Jasmine Sano</p>
+                <p>Vashti Karmelli Camu</p>
+                <p>Diane Mae Corcino</p>
+                <p>Paul Adrian Torres</p>
             </div>
         </div>
         <DIV class="spinning">
@@ -190,9 +180,23 @@
     </div>
 
     <script>
+        const audio = new Audio();
+        audio.src = './clicksound.mp3';
+
         function showList() {
+            audio.play();
             var groupList = document.getElementById('group');
             groupList.classList.toggle('show');
+        }
+
+        window.addEventListener('load', () => {
+            bgm();
+        });
+
+        function bgm() {
+            var music = new Audio();
+            music.src = '../Top Ten - Jeremy Blake.mp3';
+            music.play();
         }
     </script>
 </body>

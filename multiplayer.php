@@ -25,11 +25,11 @@
     </div>
 
     <div id="p1-score">
-        <h3><?php echo $_SESSION["playername"]; ?></h3>
+        <h3>Player One</h3>
     </div>
 
     <div id="p2-score">
-        <h3>Player Two</h3>
+        <h3 id="p2-name"><?php echo $_SESSION["playername"]; ?></h3>
     </div>
 
     <div id="confirmation-popup">
@@ -53,6 +53,7 @@
     <script type="text/javascript" src="./components/tile.js"></script>
     <script type="text/javascript" src="./components/ai.js"></script>
     <script type="text/javascript" src="./components/clock.js"></script>
+    <script type="text/javascript" src="./components/ajax.js"></script>
     <script type="text/javascript" src="./components/player.js"></script>
     
 </body>

@@ -17,5 +17,5 @@ if(isset($_POST["submit"])) {
 
     $ingame->getPlayer($username);
 
-    header("location: ../index.php?error=none");
+    header("location: ../home.php?error=none");
 }

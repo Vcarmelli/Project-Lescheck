@@ -76,7 +76,6 @@ body {
 
 .list-popup {
   padding-left: 5%;
-  width: 35%;
 }
 
 .list-popup img {
@@ -88,13 +87,14 @@ body {
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
-  margin-left: 40%;
-  padding: 1em 0.3em;
-  width: 150%;
+  width: 45vw;
+  padding: 10%;
+  margin-left: 30%;
+  color: var(--light-color);
 }
 
 .list-grp p {
-  font-size: smaller;
+  font-size: 0.95em;
   line-height: 0.9;
   text-align: center;
 }
