@@ -1,7 +1,5 @@
 <?php
     session_start();
-    session_unset();
-    session_destroy();
 ?>
 
 <!DOCTYPE html>
@@ -9,11 +7,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LesCheck | Start Game</title>
+    <title>LesCheck | Home</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Poppins:ital,wght@0,100;0,300;0,400;0,600;0,900;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/start.css">
+    <link rel="stylesheet" href="./styles/home.css">
 </head>
 <body>
     <div class="wrap">
@@ -25,7 +23,7 @@
         <div class="main-container">
             <div class="title-container">
                 <div class="wrapper ten">
-                    <div class="title">
+                    <div>
                         <h3 class="bounce">
                             <span>L</span>
                             <span>E</span>
@@ -44,19 +42,30 @@
                     Your browser does not support HTML5 audio
                 </audio>
             </div>
-        </div>
-        <div class="start-btn">
-            <a href="./username.php"><img src="./images/PNG/start.png"></a>
-        </div>
-        <div class="list-popup">
-            <a href="#" onclick="showList()"><img src="./images/PNG/list.png"></a>
-            <div id="group" class="list-grp">
-            <p><b>Sheeshables</b></p>
-            <p>Jamie Jasmine Sano</p>
-            <p>Vashti Karmelli Camu</p>
-            <p>Diane Mae Corcino</p>
-            <p>Paul Adrian Torres</p>
+            <div class="button-container">
+                <div>
+                    <a href="./game.php"><button class="button" id="startButton">Player vs AI</button></a>
+                    <a href="./multiplayer.php"><button class="button" id="multiplayerButton">Player vs Player</button></a>
+                </div>
+                <div>
+                    <a href="./instruction.php"><button class="button ins-btn" id="instructionsButton"></button></a>
+                    <a href="./start.php"><button class="button ext-btn" id="exitButton"></button></a>
+                </div>
             </div>
+        </div>
+        <div class="greet-user">
+            <?php 
+                if(isset($_SESSION["playername"])) {
+            ?>
+                    <h3>Welcome, <?php echo $_SESSION["playername"]; ?></h3>
+            <?php
+                } 
+                else {
+            ?>
+                    <h3>NO PLAYER</h3>
+            <?php
+                }
+            ?>
         </div>
         <DIV class="spinning">
             <DIV class="object3d chess-defaults">
@@ -187,13 +196,8 @@
             <div></div>
             <div></div>
         </div>
-    </div>
-
-    <script>
-        function showList() {
-            var groupList = document.getElementById('group');
-            groupList.classList.toggle('show');
-        }
-    </script>
+    </div>  
+    <script type="text/javascript" src="./components/init.js"></script>
 </body>
 </html>
+
