@@ -38,15 +38,47 @@
         <div class="start-btn" onclick="audio.play()">
             <a href="./username.php"><img src="./images/PNG/start.png"></a>
         </div>
+        <div class="leaderboard-btn" onclick="audio.play()">
+            <a href="#" onclick="showLeaderboard()"><img src="./images/PNG/leaderboard.png"></a>
+        </div>
         <div class="list-popup">
             <a href="#" onclick="showList()"><img src="./images/PNG/list.png"></a>
-            <div id="group" class="list-grp">
-                <p><b>Sheeshables</b></p>
-                <p>Jamie Jasmine Sano</p>
-                <p>Vashti Karmelli Camu</p>
-                <p>Diane Mae Corcino</p>
-                <p>Paul Adrian Torres</p>
+        </div>
+        <div id="group" class="list-grp">
+            <p><b>Sheeshables</b></p>
+            <p>Jamie Jasmine Saño</p>
+            <p>Vashti Karmelli Camu</p>
+            <p>Diane Mae Corcino</p>
+            <p>Paul Adrian Torres</p>
+        </div>
+        <div id="leaderboard" class="box">
+            <div class="title-container">
+                <h1 class="instr-title">Leaderboard</h1>
             </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Players</th>
+                        <th>Scores</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        include './includes/database.php';
+
+                        $dbase = new Database();
+                        $stmt = $dbase->connect()->prepare('SELECT * FROM players ORDER BY score DESC;');
+                        $stmt->execute();
+                        $counter = 0;
+                        while($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
+                            <tr>
+                                <td><?php echo $row["username"]; ?></td>
+                                <td><?php echo $row["score"]; ?></td>
+                            </tr>
+                        <?php } 
+                    ?>
+                </tbody>
+            </table>
         </div>
         <DIV class="spinning">
             <DIV class="object3d chess-defaults">
@@ -186,6 +218,12 @@
         function showList() {
             audio.play();
             var groupList = document.getElementById('group');
+            groupList.classList.toggle('show');
+        }
+
+        function showLeaderboard() {
+            audio.play();
+            var groupList = document.getElementById('leaderboard');
             groupList.classList.toggle('show');
         }
 

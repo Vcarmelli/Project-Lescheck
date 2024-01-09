@@ -18,7 +18,8 @@ if(isset($_POST["submit"])) {
         $ingame->getPlayer($username);
     
         header("location: ../home.php?error=none");
-    } else if ($_POST["player"] == "two") {
+    } 
+    else if ($_POST["player"] == "two") {
         session_start();
         $_SESSION["playername-prev"] = $_SESSION["playername"];
         $GLOBALS["firstplayer"] = $_SESSION["playername-prev"];

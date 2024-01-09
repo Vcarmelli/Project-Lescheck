@@ -2,7 +2,8 @@
 
 class Entry extends Database {
     protected function setUsername($username) {
-        $stmt = $this->connect()->prepare('INSERT INTO players (username) VALUES (?);');
+        $stmt = $this->connect()->prepare('INSERT INTO players (username) VALUES (?) 
+                                           ON DUPLICATE KEY UPDATE username = VALUES (username);');
         
         if(!$stmt->execute(array($username))) {
             $stmt = null;

@@ -36,6 +36,12 @@
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label>Player Name</label>
+                <?php
+                    if(isset($_SESSION["error"])) {
+                        $errorMessage = $_SESSION["error"];
+                        echo "<span class='error'>$errorMessage</span>";
+                    }
+                ?>
             </div>
             <input type="hidden" name="player" value="one">
             <button class="button" type="submit" name="submit">Enter Game</button>   
@@ -171,11 +177,5 @@
             <div></div>
         </div>
     </form>
-    <?php
-        if(isset($_SESSION["error"])) {
-            $errorMessage = $_SESSION["error"];
-            echo "<script>alert('$errorMessage');</script>";
-        }
-    ?>
 </body>
 </html>

@@ -122,7 +122,6 @@ input:focus ~ .highlight {
     animation:inputHighlighter 0.3s ease;
 }
 
-
 @keyframes inputHighlighter {
     from { 
         background:var(--dark-color); 
@@ -131,6 +130,10 @@ input:focus ~ .highlight {
         width:0; 
         background:transparent; 
     }
+}
+
+.error {
+    color: var(--dark-color);
 }
 
 .spinning {
