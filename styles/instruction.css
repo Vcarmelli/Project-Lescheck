@@ -31,7 +31,7 @@ body {
 }
 
 .box {
-  width: 55%;
+  width: 48%;
   height: 60%;
   border-radius: 25px;
   background: radial-gradient(circle, rgba(255,229,197,1) 0%, rgba(255,200,132,1) 44%, rgba(223,152,73,1) 100%);

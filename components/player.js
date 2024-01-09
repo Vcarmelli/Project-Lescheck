@@ -227,6 +227,8 @@ if(DEBUG){
 let counterAlert = 0;
 let MoveCounter = 0;
 let stopLoop = false;
+let playerone = '';
+let playertwo = '';
 
 function loop() {
     if(DEBUG){
@@ -250,11 +252,12 @@ function loop() {
         counterAlert++;
     }
     if(counterAlert > 30){
-        let player = $('#p2-name').text();
-        let p = BOARD_DEF.move == PLAYER.P1 ? player : "Player One"; 
+        playerone = $('#p1-name').text();
+        playertwo = $('#p2-name').text();
+        let p = BOARD_DEF.move == PLAYER.P1 ? playertwo : playerone; 
         let result = p + " wins!";
         $('#popupMessage').text(result);
-        $('#popupScores').html("Player One score: " + BOARD_DEF.scores['P1'] + "<br>" + player + " score: " + BOARD_DEF.scores['P2']);
+        $('#popupScores').html(playerone + " score: " + BOARD_DEF.scores['P1'] + "<br>" + playertwo + " score: " + BOARD_DEF.scores['P2']);
         $('#myModal').css('display', 'block');
         endTime();
     }
@@ -294,8 +297,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     saveButton.addEventListener('click', () => {
-        submitScore(BOARD_DEF.scores['P2']);
-        console.log("SCORE SUBMITTED?");
+        submitMultiScores(playerone, playertwo, BOARD_DEF.scores['P1'], BOARD_DEF.scores['P2']);
     });
 
     homeButton.addEventListener('click', () => {

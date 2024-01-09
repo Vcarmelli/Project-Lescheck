@@ -1,8 +1,6 @@
 <?php
 
 class Ingame extends Database {
-    public $playerUN;
-
     public function getPlayer($username) {
         $stmt = $this->connect()->prepare('SELECT * FROM players WHERE username = ?;');
 
@@ -21,9 +19,7 @@ class Ingame extends Database {
         $player = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         session_start();
-        $_SESSION["playerid"] = $player[0]["player_id"];
         $_SESSION["playername"] = $player[0]["username"];
-        $_SESSION["playerscore"] = $player[0]["score"];
         $stmt = null;
     }
 
@@ -31,6 +27,15 @@ class Ingame extends Database {
         session_start(); 
         if (isset($_SESSION["playername"])) {
             return $_SESSION["playername"];
+        } else {
+            return null;
+        };
+    }
+
+    public function getPrevPlayerName() {
+        session_start(); 
+        if (isset($GLOBALS["firstplayer"])) {
+            return $GLOBALS["firstplayer"];
         } else {
             return null;
         };

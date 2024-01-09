@@ -3,6 +3,7 @@
 class Formhandler extends Entry {
     private $username;
     private $score;
+    private $error;
 
     public function __construct($username, $score) {
         $this->username = $username;
@@ -10,16 +11,19 @@ class Formhandler extends Entry {
     }
 
     public function verifyPlayer() {
-        if($this->emptyInput() == false) {
-            header("location: ../index.php?error=emptyInput");
+        if ($this->emptyInput() == false) {
+            $this->setError('The player name field is required.');
+            header("location: ../username.php?error=emptyUsername");
             exit();
         }
-        if($this->invalidUn() == false) {
-            header("location: ../index.php?error=invalidUsername");
+        if ($this->invalidUn() == false) {
+            $this->setError('Please enter a valid username.');
+            header("location: ../username.php?error=invalidUsername");
             exit();
         }
-        if($this->unTakenCheck() == false) {
-            header("location: ../index.php?error=sameUsername");
+        if ($this->unTakenCheck() == false) {
+            $this->setError('This username is already taken.');
+            header("location: ../username.php?error=sameUsername");
             exit();
         }
 
@@ -28,6 +32,11 @@ class Formhandler extends Entry {
     }
 
 
+    private function setError($message) {
+        session_start();
+        $_SESSION["error"] = $message;
+        session_write_close();
+    }
     private function emptyInput() {
         $result = false;
         if(empty($this->username) || $this->score < 0) {

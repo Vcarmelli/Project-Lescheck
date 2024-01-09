@@ -5,7 +5,10 @@ include "./ingame.php";
 
 if(isset($_POST["action"])) {
     if($_POST["action"] == "save") {
-       save();
+        save();
+    } 
+    else if ($_POST["action"] == "savetwo") {
+        saveScores();
     }
     else {
         echo "<script>console.log('ERROR IN SCORES.PHP');</script>";
@@ -34,3 +37,30 @@ function save() {
     }
 }
 
+function saveScores() {
+    $dbase = new Database();
+    $player1 = $_POST["player1"];
+    $player2 = $_POST["player2"];
+    $result1 = $_POST["score1"];
+    $result2 = $_POST["score2"];
+
+    try {
+        $sql = 'UPDATE players 
+                SET score = CASE username
+                    WHEN ? THEN ? 
+                    WHEN ? THEN ? 
+                    END WHERE username IN (?, ?);';
+        $stmt = $dbase->connect()->prepare($sql);
+    
+        if(!$stmt->execute(array($player1, $result1, $player2, $result2, $player1, $player2))) {
+            $stmt = null;
+            header("location: ../index.php?error=scoreboardNotUpdated");
+            exit();
+        }
+        $stmt = null;
+        echo 1;
+    } 
+    catch (Exception $e) {
+        die("Query Failed in scores.php: " . $e->getMessage());
+    }
+}

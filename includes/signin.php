@@ -1,21 +1,38 @@
 <?php
 
 if(isset($_POST["submit"])) {
-    $username = $_POST["username"];
-    $score = 0;
-
+    
     include "./database.php";
     include "./entry.php";
     include "./formhandler.php";
     include "./ingame.php";
 
-    $signin = new Formhandler($username, $score);
+    if($_POST["player"] == "one") {
+        $username = $_POST["username"];
+        $score = 0;
 
-    $signin->verifyPlayer();
+        $signin = new Formhandler($username, $score);
+        $signin->verifyPlayer();
 
-    $ingame = new Ingame();
+        $ingame = new Ingame();
+        $ingame->getPlayer($username);
+    
+        header("location: ../home.php?error=none");
+    } else if ($_POST["player"] == "two") {
+        session_start();
+        $_SESSION["playername-prev"] = $_SESSION["playername"];
+        $GLOBALS["firstplayer"] = $_SESSION["playername-prev"];
+        session_write_close();
 
-    $ingame->getPlayer($username);
+        $username = $_POST["username"];
+        $score = 0;
 
-    header("location: ../home.php?error=none");
+        $signin = new Formhandler($username, $score);
+        $signin->verifyPlayer();
+
+        $ingame = new Ingame();
+        $ingame->getPlayer($username);
+        header("location: ../multiplayer.php?error=none");
+    }
+    
 }

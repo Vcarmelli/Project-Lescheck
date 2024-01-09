@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,8 +37,10 @@
                 <span class="bar"></span>
                 <label>Player Name</label>
             </div>
+            <input type="hidden" name="player" value="one">
             <button class="button" type="submit" name="submit">Enter Game</button>   
         </div>
+        
         <DIV class="spinning">
             <DIV class="object3d chess-defaults">
                 <!-- The Stage -->
@@ -165,5 +171,11 @@
             <div></div>
         </div>
     </form>
+    <?php
+        if(isset($_SESSION["error"])) {
+            $errorMessage = $_SESSION["error"];
+            echo "<script>alert('$errorMessage');</script>";
+        }
+    ?>
 </body>
 </html>

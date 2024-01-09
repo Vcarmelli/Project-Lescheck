@@ -25,7 +25,7 @@
     </div>
 
     <div id="p1-score">
-        <h3>Player One</h3>
+        <h3 id="p1-name"><?php echo $_SESSION["playername-prev"]; ?></h3>
     </div>
 
     <div id="p2-score">

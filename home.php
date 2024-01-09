@@ -40,7 +40,7 @@
             <div class="button-container">
                 <div>
                     <a href="./game.php"><button class="button" id="startButton">Player vs AI</button></a>
-                    <a href="./multiplayer.php"><button class="button" id="multiplayerButton">Player vs Player</button></a>
+                    <a href="./username2.php"><button class="button" id="multiplayerButton">Player vs Player</button></a>
                 </div>
                 <div>
                     <a href="./instruction.php"><button class="button ins-btn" id="instructionsButton"></button></a>
