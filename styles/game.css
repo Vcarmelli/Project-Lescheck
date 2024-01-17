@@ -166,7 +166,6 @@ body {
     text-align: center;
     z-index: 999;
     height: 18%;
-    width: 19%;
     padding: 40px 50px;
     color: var(--light-color);
 }
@@ -265,3 +264,65 @@ body {
     margin-left: 110px;
 }
 
+@media(max-width:1300px){
+
+    #p1-score, #p2-score {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        position: fixed;
+        box-sizing: border-box;
+        background-image: url('../images/PNG/red-score.png'); 
+        background-size: cover;
+        height: 61%;
+        width: 17%;
+        top: 50%;
+        padding: 0px 30px;
+        transform: translateY(-50%);
+        display: none;
+        visibility: hidden;
+    }
+}
+
+@media(max-width:600px){
+    #checkerboard {
+        position: relative;
+        width: 320px;
+        height: 320px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(236, 186, 136, 0.2);
+        overflow: hidden;
+        border-radius: 25px;
+    }
+    
+    #checkerboard::before {
+        content: '';
+        position: absolute;
+        width: 250px;
+        height: 140%;
+        background: linear-gradient(#9A3B3B, #00659E);
+        animation: animate 7s linear infinite;
+    }
+    
+    #checkerboard::after {
+        content: '';
+        position: absolute;
+        inset: 4px;
+        border-radius: 16px;
+    }
+    
+    @keyframes animate {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    
+    #checkerboard canvas {
+        z-index: 10;
+    }
+}

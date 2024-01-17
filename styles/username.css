@@ -9,6 +9,11 @@
 
 body {
     animation: none;
+    background-image: url("https://r4.wallpaperflare.com/wallpaper/760/955/638/artwork-landscape-sky-mountains-wallpaper-78664db880d01c78404c214e28e2847a.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    height: 100vh;
 }
 
 .main-container {
@@ -427,4 +432,136 @@ input:focus ~ .highlight {
     --length: var(--piece-basesize);
     --height: 15px;
     border-radius: 50%;
+}
+
+@media(max-width: 1500px){
+    .bounce {
+        width: 100%;
+        display: inline-flex;
+        justify-content: center;
+        margin: 0;
+      }
+      
+      .bounce span {
+        display: inline-flex;
+        color: #c7f4ff;
+        font-family: "Bowlby One SC", sans-serif;
+        font-size: 80px;
+        text-align: center;
+        margin: 0;
+        color: var(--dark-color);
+        animation: bounce 1s infinite;
+      }
+}
+
+@media(max-width: 1150px){
+    .bounce {
+        width: 100%;
+        display: inline-flex;
+        justify-content: center;
+        margin: 0;
+      }
+      
+      .bounce span {
+        display: inline-flex;
+        color: #c7f4ff;
+        font-family: "Bowlby One SC", sans-serif;
+        font-size: 50px;
+        text-align: center;
+        margin: 0;
+        color: var(--dark-color);
+        animation: bounce 1s infinite;
+      }
+      
+      .button {
+        background-color: transparent;
+        background-image: url('../images/PNG/button-border.png');
+        background-size: cover;
+        background-position: center;
+        border: none;
+        border-radius: 15px;
+        height: 2.5em;
+        width: 250px;
+        color: var(--light-color);
+        margin: 20px;
+    }
+}
+
+@media(max-width: 750px){
+    .bounce {
+        width: 100%;
+        display: inline-flex;
+        justify-content: center;
+        margin: 0;
+      }
+      
+      .bounce span {
+        display: inline-flex;
+        color: #c7f4ff;
+        font-family: "Bowlby One SC", sans-serif;
+        font-size: 30px;
+        text-align: center;
+        margin: 0;
+        color: var(--dark-color);
+        animation: bounce 1s infinite;
+      }
+      
+      .button {
+        background-color: transparent;
+        background-image: url('../images/PNG/button-border.png');
+        background-size: cover;
+        background-position: center;
+        border: none;
+        border-radius: 25px;
+        height: 60px;
+        width: 200px;
+        color: var(--light-color);
+        margin: 20px;
+    }
+    input {
+        font-size: 10px;
+        padding: 10px 10px 10px 5px;
+        display: block;
+        width: 190px;
+        border: none;
+    }
+    
+    input:focus { 
+        outline:none; 
+    }
+
+    .group { 
+        align-self: center;
+        position: relative; 
+        margin: 15px 0 10px 90px;
+        z-index: 90;
+    }
+    .bar { 
+        position:relative; 
+        display:block; 
+        width:300px; 
+    }
+    
+    .bar:before, .bar:after {
+        content:'';
+        height:2px; 
+        width:0;
+        bottom:1px; 
+        position:absolute;
+        background:var(--dark-color); 
+        transition:0.2s ease all; 
+        -webkit-transition:0.2s ease all;
+    }
+    
+    .bar:before {
+        left:30%;
+    }
+    
+    .bar:after {
+        right:60%; 
+    }
+    
+    input:focus ~ .bar:before, input:focus ~ .bar:after {
+        width:40%;
+    }
 }

@@ -36,3 +36,19 @@ th, td {
 tr:hover {
   background-color: #F2ECBE;
 }
+
+
+@media(max-width: 650px){
+  h1 {
+    font-size: 35px;
+  }
+
+  .button {
+    width: 200px;
+    height: 60px;
+  }
+
+  table {
+    margin: 0 auto;
+  }
+}
