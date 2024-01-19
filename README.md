@@ -3,8 +3,10 @@
 
  <ul>
    <li>Player database
+    <ul>
      <li>Username</li>
      <li>Score</li>
+    </ul>
    </li>
    <li>Player vs AI</li>
    <li>Player vs Player</li>
